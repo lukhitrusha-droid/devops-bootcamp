@@ -1,0 +1,16 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Download Code
+      uses: actions/checkout@v3
+
+    - name: Test Docker Build
+      run: docker build -t my-app .
