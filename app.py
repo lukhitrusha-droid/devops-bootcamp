@@ -1,1 +1,9 @@
-"I BUILT A PIPELINE!"
+from flask import Flask
+app = flask(__name__)
+
+@app.route('/')
+def hello():
+	return "I BUILT A PIPELINE!"
+
+if __name__ == '__main__':
+	app.run(host='0.0.0.0', port=5000)
